@@ -36,17 +36,33 @@ namespace HomeAutomation.Dialogs
         [LuisIntent("on")]
         public async Task roomDeviceOn(IDialogContext context, LuisResult result)
         {
-            intent = START;
-            setEntitiesValues(new List<EntityRecommendation>(result.Entities));
-            await getGiphyForResponseAsync(context);
+            List<EntityRecommendation> entitiesList = new List<EntityRecommendation>(result.Entities);
+            if (entitiesList.Count != 2)
+            {
+                await None(context, result);
+            }
+            else
+            {
+                intent = START;
+                setEntitiesValues(new List<EntityRecommendation>(result.Entities));
+                await getGiphyForResponseAsync(context);
+            }
         }
 
         [LuisIntent("off")]
         public async Task roomDeviceOff(IDialogContext context, LuisResult result)
         {
-            intent = STOP;
-            setEntitiesValues(new List<EntityRecommendation>(result.Entities));
-            await getGiphyForResponseAsync(context);
+            List<EntityRecommendation> entitiesList = new List<EntityRecommendation>(result.Entities);
+            if (entitiesList.Count != 2)
+            {
+                await None(context, result);
+            }
+            else
+            {
+                intent = STOP;
+                setEntitiesValues(new List<EntityRecommendation>(result.Entities));
+                await getGiphyForResponseAsync(context);
+            }
         }
 
         private void setEntitiesValues(List<EntityRecommendation> entityList)
