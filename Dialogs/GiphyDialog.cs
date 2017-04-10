@@ -15,7 +15,7 @@ namespace HomeAutomation.Dialogs
     [Serializable]
     public class GiphyDialog : LuisDialog<object>
     {
-        private const string GIPHY_URL = "http://api.giphy.com/v1/gifs/search?q=";
+        private const string GIPHY_URL = "https://api.giphy.com/v1/gifs/search?q=";
         private const string GUPHY_API_KEY = "&api_key=dc6zaTOxFJmzC";
         private const string NO_RECO_MESSAGE = "Sorry, I don't understand what you mean.";
         private const string START = "start";
