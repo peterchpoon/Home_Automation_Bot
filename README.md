@@ -1,5 +1,5 @@
 # Home_Automation_Bot
-A animated gif home automation bot written with MS Bot Framework
+A animated gif home automation bot written with MS Bot Framework.
 It understands commands with the intention to power on/off devices in a given room, for example:
 * switch on the patio light
 * turn off the washer in the laundry room
